@@ -1,0 +1,113 @@
+package br.HerancaPacMan;
+
+public class Atributos {
+    private  String nome;
+    private  int vidas;
+    private  String cor;
+    private  String movimentacao;
+    private  String objetivo;
+
+    public java.lang.String getNome() {
+        return nome;
+    }
+
+    public void setNome(java.lang.String nome) {
+        this.nome = nome;
+    }
+
+    public int getVidas() {
+        return vidas;
+    }
+
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
+    }
+
+    public java.lang.String getCor() {
+        return cor;
+    }
+
+    public void setCor(java.lang.String cor) {
+        this.cor = cor;
+    }
+
+    public java.lang.String getMovimentacao() {
+        return movimentacao;
+    }
+
+    public void setMovimentacao(java.lang.String movimentacao) {
+        this.movimentacao = movimentacao;
+    }
+
+    public java.lang.String getObjetivo() {
+        return objetivo;
+    }
+
+    public void setObjetivo(java.lang.String objetivo) {
+        this.objetivo = objetivo;
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PACMAN
+package br.HerancaPacMan;
+
+public class PacMan extends Atributos{
+    @Override
+    public String getCor() {
+        return super.getCor();
+    }
+
+    @Override
+    public String getNome() {
+        return super.getNome();
+    }
+
+    @Override
+    public int getVidas() {
+        return super.getVidas();
+    }
+
+    @Override
+    public String getMovimentacao() {
+        return super.getMovimentacao();
+    }
+
+    @Override
+    public String getObjetivo() {
+        return super.getObjetivo();
+    }
+}
+
+
+INIMIGOS
+package br.HerancaPacMan;
+
+public class Inimigo extends Atributos{
+    @Override
+    public String getCor() {
+        return super.getCor();
+    }
+
+    @Override
+    public String getNome() {
+        return super.getNome();
+    }
+
+    @Override
+    public int getVidas() {
+        return super.getVidas();
+    }
+
+    @Override
+    public String getMovimentacao() {
+        return super.getMovimentacao();
+    }
+
+    @Override
+    public String getObjetivo() {
+        return super.getObjetivo();
+    }
+}
