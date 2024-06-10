@@ -1,0 +1,95 @@
+package br.unipar;
+
+public class ContaCorrente extends HerancaContaBancaria {
+    public ContaCorrente() {
+    }
+
+    public boolean saque(Double valor) {
+        if (this.saldo >= valor) {
+            this.saldo = this.saldo - valor;
+            return true;
+        } else {
+            System.out.println("Infelizmente seu saque precisa ser menor que seu saldo. ;-; ");
+            return false;
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package br.unipar;
+
+public class ContaPoupanca extends HerancaContaBancaria {
+    public ContaPoupanca() {
+    }
+
+    public boolean saque(Double valor) {
+        if (this.saldo - 5.0 >= valor) {
+            this.saldo = this.saldo - valor;
+            System.out.println("Saque Com Sucesso");
+            return true;
+        } else {
+            System.out.println("Saque Inválido. ;-; ");
+            return false;
+        }
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package br.unipar;
+
+import java.util.UUID;
+
+abstract class HerancaContaBancaria implements InterfaceContaBancaria {
+    protected Double saldo = 0.0;
+    private String numeroConta = UUID.randomUUID().toString();
+
+    public HerancaContaBancaria() {
+    }
+
+    public Double obterSaldo() {
+        return this.saldo;
+    }
+
+    public void depositar(Double valor) {
+        this.saldo = this.saldo + valor;
+    }
+
+    public String retornarNumeroConta() {
+        return this.numeroConta;
+    }
+}
+
+
+package br.unipar;
+
+public interface InterfaceContaBancaria {
+    Double obterSaldo();
+
+    void depositar(Double var1);
+
+    String retornarNumeroConta();
+
+    boolean saque(Double var1);
+}
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package br.unipar;
+
+public class Main {
+    public Main() {
+    }
+
+    public static void main(String[] args) {
+        ContaCorrente contaCorrente = new ContaCorrente();
+        contaCorrente.depositar(1000.0);
+        System.out.println("Seu saldo é : " + contaCorrente.obterSaldo());
+        System.out.println("Numero da conta é: " + contaCorrente.retornarNumeroConta());
+    }
+}
+
